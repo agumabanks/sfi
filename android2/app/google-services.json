@@ -1,0 +1,156 @@
+{
+  "project_info": {
+    "project_number": "120657316939",
+    "firebase_url": "https://sanaa-fi-default-rtdb.firebaseio.com",
+    "project_id": "sanaa-fi",
+    "storage_bucket": "sanaa-fi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:120657316939:android:0e3a99329fd2e2017f11ce",
+        "android_client_info": {
+          "package_name": "com.sanaa.agents"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "120657316939-j86rhlmp3mc8jl8ff2j9fd06lgr0m1im.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7tSpjNkiVjFa-9Jtz8XYYoTBAXj15sns"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "120657316939-j86rhlmp3mc8jl8ff2j9fd06lgr0m1im.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:120657316939:android:018bf1499ac902427f11ce",
+        "android_client_info": {
+          "package_name": "com.sanaa.fiuser"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "120657316939-j86rhlmp3mc8jl8ff2j9fd06lgr0m1im.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7tSpjNkiVjFa-9Jtz8XYYoTBAXj15sns"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "120657316939-j86rhlmp3mc8jl8ff2j9fd06lgr0m1im.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:120657316939:android:bc7c61e6fa3649ce7f11ce",
+        "android_client_info": {
+          "package_name": "com.sanaa.simba"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "120657316939-j86rhlmp3mc8jl8ff2j9fd06lgr0m1im.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7tSpjNkiVjFa-9Jtz8XYYoTBAXj15sns"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "120657316939-j86rhlmp3mc8jl8ff2j9fd06lgr0m1im.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:120657316939:android:e919a4e928e8b0a57f11ce",
+        "android_client_info": {
+          "package_name": "com.sanaa.umoja"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "120657316939-j86rhlmp3mc8jl8ff2j9fd06lgr0m1im.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7tSpjNkiVjFa-9Jtz8XYYoTBAXj15sns"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "120657316939-j86rhlmp3mc8jl8ff2j9fd06lgr0m1im.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:120657316939:android:27dc7eff9eed5d507f11ce",
+        "android_client_info": {
+          "package_name": "fi.sanaa.co"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "120657316939-j86rhlmp3mc8jl8ff2j9fd06lgr0m1im.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7tSpjNkiVjFa-9Jtz8XYYoTBAXj15sns"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "120657316939-j86rhlmp3mc8jl8ff2j9fd06lgr0m1im.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

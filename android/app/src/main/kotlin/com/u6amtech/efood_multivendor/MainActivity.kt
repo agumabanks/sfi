@@ -1,4 +1,4 @@
-package com.sanaa.fiuser
+package fi.sanaa.co
 
 import io.flutter.embedding.android.FlutterFragmentActivity
 
