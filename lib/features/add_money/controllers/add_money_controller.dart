@@ -8,7 +8,7 @@ class AddMoneyController extends GetxController implements GetxService {
   final AddMoneyRepo addMoneyRepo;
   AddMoneyController({required this.addMoneyRepo});
 
- bool  _isLoading = false;
+   bool  _isLoading = false;
   String? _addMoneyWebLink;
   bool get isLoading => _isLoading;
   String? get addMoneyWebLink => _addMoneyWebLink;

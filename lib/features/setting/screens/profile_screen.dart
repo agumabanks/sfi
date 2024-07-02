@@ -1,4 +1,8 @@
+import 'package:Sanaa/features/banking/cards/get-new-card.dart';
+import 'package:Sanaa/features/banking/cards/sanaaCards.dart';
+import 'package:Sanaa/features/banking/loans.dart';
 import 'package:Sanaa/features/setting/widgets/menuItem2.dart';
+import 'package:Sanaa/helper/custom_snackbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
@@ -21,6 +25,9 @@ import 'package:Sanaa/features/setting/widgets/status_menu.dart';
 import 'package:Sanaa/features/setting/widgets/user_info_widget.dart';
 import 'package:Sanaa/features/requested_money/screens/requested_money_list_screen.dart';
 import 'package:Sanaa/features/setting/screens/transaction_limit_screen.dart';
+
+import '../../banking/investmentScreen.dart';
+import '../../banking/savings/savingsScreen.dart';
 
 
 
@@ -161,19 +168,51 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 Row(children: [
                    CustomInkWellWidget(
                     child: MenuItem2(image: "assets/image/8703780_card_dynamic_gradient_icon.png",title: 'Cards'.tr),
-                    onTap: () => Get.to(()=> const RequestedMoneyListScreen(requestType: RequestType.withdraw)),
+                    onTap: (){
+                      Get.to(()=> CardScreenPage());
+                      // showCustomSnackBarHelper(message: 'Coming Soon', isError: true);
+                      // showCustomSnackBarHelper('Coming Soon',isError: false, duration: const Duration(minutes: 10));
+                    }
+                    // () => Get.to(()=> CardScreenPage() //const RequestedMoneyListScreen(requestType: RequestType.withdraw)
+                    // ),
                   ),
 
 
                   CustomInkWellWidget(
                     child: MenuItem2(image: "assets/image/SavingV.png",title: 'Saving'.tr),
-                    onTap: () => Get.to(()=> const RequestedMoneyListScreen(requestType: RequestType.request)),
+                    onTap: (){
+                      Get.to(()=> SavingsScreen());
+                      // showCustomSnackBarHelper(message: 'Coming Soon', isError: true);
+                      // showCustomSnackBarHelper('Coming Soon',isError: false, duration: const Duration(minutes: 10));
+                    }
+                    // () => Get.to(()=> const RequestedMoneyListScreen(requestType: RequestType.request)),
                   ),
 
                   CustomInkWellWidget(
                     child: MenuItem2(image:"assets/image/savings.png",title: 'Loans'.tr),
-                    onTap: () => Get.to(()=> const RequestedMoneyListScreen(requestType: RequestType.sendRequest)),
+                    onTap: ()
+                    {
+
+                      Get.to(()=> LoansPage());
+                      // showCustomSnackBarHelper(message: 'Coming Soon', isError: true);
+                      // showCustomSnackBarHelper('Coming Soon',isError: false, duration: const Duration(minutes: 10));
+                    }
+                    // () => Get.to(()=> LoansPage()
+                    // // const RequestedMoneyListScreen(requestType: RequestType.sendRequest)
+                    // ),
                   ),
+
+                  CustomInkWellWidget(
+                    child: MenuItem2(image:"assets/image/savings.png",title: 'Invest '.tr),
+                    onTap: (){
+
+                       Get.to(()=> InvestmentScreen());
+                      // showCustomSnackBarHelper('Coming Soon',isError: false, duration: const Duration(minutes: 10));
+                    }
+                    
+                  ),
+
+                  // 
 
 
                 ]),

@@ -40,7 +40,7 @@
     </queries>
 
     <application
-        android:label="6Cash"
+        android:label="Sanaa Finance"
         android:name="${applicationName}"
         android:requestLegacyExternalStorage="true"
         android:usesCleartextTraffic="true"

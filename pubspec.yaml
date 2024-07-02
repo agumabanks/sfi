@@ -1,7 +1,7 @@
 name: Sanaa
-description: A new Flutter application.
+description: Sanaa Finance
 publish_to: 'none' #
-version: 1.0.0+1
+version: 1.0.0+2
 
 environment:
   sdk: '>=2.15.0 <3.0.0'
@@ -16,6 +16,7 @@ dependencies:
   intl: any
   cupertino_icons: ^1.0.5
   get: ^4.6.5
+  fl_chart: 
   shared_preferences: ^2.1.0
   connectivity_plus: ^3.0.6
   firebase_core: ^2.10.0

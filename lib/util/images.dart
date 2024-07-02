@@ -11,6 +11,13 @@ class Images {
   static const String onboardImage3 = 'assets/image/onboard_image_3.png';
   static const String onboardImage1 = 'assets/image/onboard_image_1.png';
 
+  // sanaa onboard
+    static const String onboardImage4 = 'assets/image/banking.png';
+    static const String onboardImage5 = 'assets/image/finedu.png';
+    static const String onboardImage6 = 'assets/image/payments.png';
+
+
+
   static const String onboardBackground1 = 'assets/image/onboard_background_1.png';
   static const String onboardBackground2 = 'assets/image/onboard_background_2.png';
   static const String onboardBackground3 = 'assets/image/onboard_background_3.png';
@@ -88,6 +95,8 @@ class Images {
   static const String contactPermissionDeniAnimation = 'assets/animationFile/contact_denied_animation.json';
   static const String customerSupport = 'assets/animationFile/customer_support_animation.json';
   static const String qrScanAnimation = 'assets/image/qr_scan.gif';
+  static const String savingVoultBg = 'assets/image/savings-voult.png';
+
 
   static String getPaymentImage(String name) => 'assets/payment/$name.png';
 

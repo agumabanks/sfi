@@ -33,6 +33,8 @@ class AppConstants {
   static const String customerCashOut = '/api/v1/customer/cash-out';
   static const String customerPinVerify = '/api/v1/customer/verify-pin';
   static const String customerAddMoney = '/api/v1/customer/add-money';
+  static const String customerPesapalAddMoney = '/api/v1/customer/add-m-pesa';
+
   static const String faqUri = '/api/v1/faq';
   static const String notificationUri = '/api/v1/customer/get-notification';
   static const String transactionHistoryUri = '/api/v1/customer/transaction-history';
@@ -100,22 +102,22 @@ class AppConstants {
 
   static  List<OnboardModel> onboardList = [
     OnboardModel(
-      Images.onboardImage1,
+      Images.onboardImage6,
       Images.onboardBackground1,
-      'on_boarding_title_1'.tr,
-      '${'send_money_from'.tr} $appName ${'easily_at_anytime'.tr}',
+      'Sanaa Pay'.tr,
+      'Pay bills, buy airtime, send money and more with Sanaa with the sanaa wallet'.tr,
     ),
 
     OnboardModel(
-      Images.onboardImage2, Images.onboardBackground2,
-      'on_boarding_title_2'.tr,
-      'withdraw_money_is_even_more'.tr,
+      Images.onboardImage5, Images.onboardBackground2,
+      'Sanaa Savings'.tr,
+      'Set money a side for the things that matter, Save automatically with every soko 24 sale'.tr,
     ),
     OnboardModel(
-      Images.onboardImage3,
+      Images.onboardImage4,
       Images.onboardBackground3,
-      'on_boarding_title_3'.tr,
-      '${'request_for_money_using'.tr} $appName ${'account_to_any_friend'.tr}',
+      'Sanaa Loans'.tr,
+      'Loans to keep your business moving forward. Access money you need on the go. ',
     ),
   ];
 }
