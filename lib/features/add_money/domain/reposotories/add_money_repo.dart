@@ -10,14 +10,18 @@ class AddMoneyRepo {
   final ApiClient apiClient;
   AddMoneyRepo({required this.apiClient});
   
+
+  // get phone number
+  UserShortDataModel? userData = Get.find<AuthController>().getUserData();
+  // String? phoneNumber = userData!.phone;
   Future<Response>  addMoneyApi({required double amount, required String paymentMethod}) async {
-    UserShortDataModel? userData = Get.find<AuthController>().getUserData();
-    String? phoneNumber = userData!.phone;
-    
     Map<String, Object> body = {
       'amount': '$amount',
-      'payment_method': '$phoneNumber',
+      'payment_method': paymentMethod,
     };
-    return await apiClient.postData(AppConstants.customerPesapalAddMoney,body);
+    return await apiClient.postData(AppConstants.customerAddMoney,body);
   }
+
+
+
 }
