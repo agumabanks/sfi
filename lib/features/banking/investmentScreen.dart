@@ -306,7 +306,7 @@ class MyInvestments extends StatelessWidget {
             currentValue: 535000,
           ),
         ],
-      ),
+      ), 
     );
   }
 }

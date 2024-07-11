@@ -33,7 +33,7 @@ class _LoansPageState extends State<LoansPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Loans Page'),
+        title: Text('Sanaa Loans'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -41,107 +41,115 @@ class _LoansPageState extends State<LoansPage> {
           child: Column(
             children: <Widget>[
               LoanCard(),
-              Text(
-                'Available Loan Types',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-              ListTile(
-                title: Text('Business Loan'),
-                leading: Radio<String>(
-                  value: 'Business Loan',
-                  groupValue: _loanType,
-                  onChanged: (String? value) {
-                    setState(() {
-                      _loanType = value!;
-                    });
-                  },
-                ),
-              ),
-              ListTile(
-                title: Text('Personal Loan'),
-                leading: Radio<String>(
-                  value: 'Personal Loan',
-                  groupValue: _loanType,
-                  onChanged: (String? value) {
-                    setState(() {
-                      _loanType = value!;
-                    });
-                  },
-                ),
-              ),
-              ListTile(
-                title: Text('Home Loan'),
-                leading: Radio<String>(
-                  value: 'Home Loan',
-                  groupValue: _loanType,
-                  onChanged: (String? value) {
-                    setState(() {
-                      _loanType = value!;
-                    });
-                  },
-                ),
-              ),
-              Divider(),
-              Form(
-                key: _formKey,
-                child: Column(
-                  children: <Widget>[
-                    TextFormField(
-                      decoration: InputDecoration(labelText: 'Loan Amount'),
-                      keyboardType: TextInputType.number,
-                      validator: (value) {
-                        if (value!.isEmpty) {
-                          return 'Please enter a loan amount';
-                        }
-                        return null;
-                      },
-                      onSaved: (value) {
-                        _loanAmount = double.parse(value!);
-                      },
-                    ),
-                    TextFormField(
-                      decoration: InputDecoration(labelText: 'Interest Rate (%)'),
-                      keyboardType: TextInputType.number,
-                      validator: (value) {
-                        if (value!.isEmpty) {
-                          return 'Please enter an interest rate';
-                        }
-                        return null;
-                      },
-                      onSaved: (value) {
-                        _interestRate = double.parse(value!);
-                      },
-                    ),
-                    TextFormField(
-                      decoration: InputDecoration(labelText: 'Loan Term (years)'),
-                      keyboardType: TextInputType.number,
-                      validator: (value) {
-                        if (value!.isEmpty) {
-                          return 'Please enter a loan term';
-                        }
-                        return null;
-                      },
-                      onSaved: (value) {
-                        _loanTerm = int.parse(value!);
-                      },
-                    ),
-                    SizedBox(height: 20),
-                    ElevatedButton(
-                      onPressed: _calculateLoan,
-                      child: Text('Calculate'),
-                    ),
-                    SizedBox(height: 20),
-                    Text(
-                      'Monthly Payment: \$${_monthlyPayment.toStringAsFixed(2)}',
-                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                ),
-              ),
-            ],
+              ],
           ),
         ),
       ),
     );
   }
 }
+
+
+
+
+
+
+
+// Text(
+//                 'Available Loan Types',
+//                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+//               ),
+//               ListTile(
+//                 title: Text('Business Loan'),
+//                 leading: Radio<String>(
+//                   value: 'Business Loan',
+//                   groupValue: _loanType,
+//                   onChanged: (String? value) {
+//                     setState(() {
+//                       _loanType = value!;
+//                     });
+//                   },
+//                 ),
+//               ),
+//               ListTile(
+//                 title: Text('Personal Loan'),
+//                 leading: Radio<String>(
+//                   value: 'Personal Loan',
+//                   groupValue: _loanType,
+//                   onChanged: (String? value) {
+//                     setState(() {
+//                       _loanType = value!;
+//                     });
+//                   },
+//                 ),
+//               ),
+//               ListTile(
+//                 title: Text('Home Loan'),
+//                 leading: Radio<String>(
+//                   value: 'Home Loan',
+//                   groupValue: _loanType,
+//                   onChanged: (String? value) {
+//                     setState(() {
+//                       _loanType = value!;
+//                     });
+//                   },
+//                 ),
+//               ),
+//               Divider(),
+//               Form(
+//                 key: _formKey,
+//                 child: Column(
+//                   children: <Widget>[
+//                     TextFormField(
+//                       decoration: InputDecoration(labelText: 'Loan Amount'),
+//                       keyboardType: TextInputType.number,
+//                       validator: (value) {
+//                         if (value!.isEmpty) {
+//                           return 'Please enter a loan amount';
+//                         }
+//                         return null;
+//                       },
+//                       onSaved: (value) {
+//                         _loanAmount = double.parse(value!);
+//                       },
+//                     ),
+//                     TextFormField(
+//                       decoration: InputDecoration(labelText: 'Interest Rate (%)'),
+//                       keyboardType: TextInputType.number,
+//                       validator: (value) {
+//                         if (value!.isEmpty) {
+//                           return 'Please enter an interest rate';
+//                         }
+//                         return null;
+//                       },
+//                       onSaved: (value) {
+//                         _interestRate = double.parse(value!);
+//                       },
+//                     ),
+//                     TextFormField(
+//                       decoration: InputDecoration(labelText: 'Loan Term (years)'),
+//                       keyboardType: TextInputType.number,
+//                       validator: (value) {
+//                         if (value!.isEmpty) {
+//                           return 'Please enter a loan term';
+//                         }
+//                         return null;
+//                       },
+//                       onSaved: (value) {
+//                         _loanTerm = int.parse(value!);
+//                       },
+//                     ),
+//                     SizedBox(height: 20),
+//                     ElevatedButton(
+//                       onPressed: _calculateLoan,
+//                       child: Text('Calculate'),
+//                     ),
+//                     SizedBox(height: 20),
+//                     Text(
+//                       'Monthly Payment: \$${_monthlyPayment.toStringAsFixed(2)}',
+//                       style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+//                     ),
+//                   ],
+//                 ),
+//               ),
+            
