@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 
+import 'widget/loanCard.dart';
+
 
 class LoanCalculatorApp extends StatelessWidget {
   @override
@@ -30,6 +32,7 @@ class LoanCalculatorPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              
               SizedBox(
                 height: 200,
                 child: Card(

@@ -16,6 +16,13 @@ class Images {
     static const String onboardImage5 = 'assets/image/finedu.png';
     static const String onboardImage6 = 'assets/image/payments.png';
 
+// sanaa Cards assets\image\sanaaCard.png
+static const String sanaaCard = 'assets/image/sfibg.png'; 
+static const String sanaaChip = 'assets/image/chip.png'; 
+static const String sanaaf = 'assets/image/sf.png'; 
+static const String sanaaNfc = 'assets/image/nfc.png';
+static const String sanaaCarLogo = 'assets/image/logo-white.png'; 
+
 
 
   static const String onboardBackground1 = 'assets/image/onboard_background_1.png';

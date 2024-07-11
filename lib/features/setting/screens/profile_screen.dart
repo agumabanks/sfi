@@ -179,7 +179,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
 
                   CustomInkWellWidget(
-                    child: MenuItem2(image: "assets/image/SavingV.png",title: 'Saving'.tr),
+                    child: MenuItem2(image: "assets/image/SavingV.png",title: 'Saving '.tr),
                     onTap: (){
                       Get.to(()=> SavingsScreen());
                       // showCustomSnackBarHelper(message: 'Coming Soon', isError: true);
@@ -203,7 +203,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
 
                   CustomInkWellWidget(
-                    child: MenuItem2(image:"assets/image/savings.png",title: 'Invest '.tr),
+                    child: MenuItem2(image:"assets/image/investIcon.png",title: 'Invest '.tr),
                     onTap: (){
 
                        Get.to(()=> InvestmentScreen());

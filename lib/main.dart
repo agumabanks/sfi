@@ -21,7 +21,8 @@ import 'package:url_strategy/url_strategy.dart';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
-
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'helper/get_di.dart' as di;
 
 final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
@@ -67,7 +68,15 @@ await Firebase.initializeApp(
     }
   }
 
-  runApp(MyApp(languages: languages, orderID: orderID));
+
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]).then((_) {
+   runApp(MyApp(languages: languages, orderID: orderID));
+  });
+
+  
 
 }
 

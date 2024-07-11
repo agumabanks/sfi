@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'loans/widget/loanCard.dart';
+
 
 class LoansPage extends StatefulWidget {
   @override
@@ -38,6 +40,7 @@ class _LoansPageState extends State<LoansPage> {
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
+              LoanCard(),
               Text(
                 'Available Loan Types',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),

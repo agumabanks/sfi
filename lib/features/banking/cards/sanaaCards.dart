@@ -1,3 +1,5 @@
+import 'package:Sanaa/features/banking/cards/sanaaCard.dart';
+import 'package:Sanaa/features/banking/cards/widgets/sanaaCard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -69,25 +71,8 @@ class CardScreenPage extends StatelessWidget {
             SizedBox(
               height: 80,
             ),
-            Container(
-            height: Get.height /3  - 30 ,
-            width: Get.width,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(10),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.withOpacity(0.5),
-                  spreadRadius: 1,
-                  blurRadius: 1,
-                  offset: Offset(0.5, 0.5), // changes position of shadow
-                ),
-              ],
-            
-            ),
-              child: Text('')
-            ),
-            SizedBox(
+            sanaaCard(),
+             SizedBox(
               height: 20,
             ),
             Container(
@@ -288,3 +273,5 @@ Widget cardOffers() {
   );
 }
 }
+
+
