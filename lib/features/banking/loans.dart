@@ -1,3 +1,4 @@
+import 'package:Sanaa/features/banking/loans/loansPage.dart';
 import 'package:flutter/material.dart';
 
 import 'loans/widget/loanCard.dart';
@@ -37,13 +38,7 @@ class _LoansPageState extends State<LoansPage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: SingleChildScrollView(
-          child: Column(
-            children: <Widget>[
-              LoanCard(),
-              ],
-          ),
-        ),
+        child: LoanApp()
       ),
     );
   }

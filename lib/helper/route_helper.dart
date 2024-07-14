@@ -1,4 +1,7 @@
 import 'dart:convert';
+import 'package:Sanaa/features/banking/loans/loansPage.dart';
+import 'package:Sanaa/features/banking/loans/widget/LoanOffersScreen.dart';
+import 'package:Sanaa/features/banking/loans/widget/loan_calculator_screen.dart';
 import 'package:get/get.dart';
 import 'package:Sanaa/features/splash/controllers/splash_controller.dart';
 import 'package:Sanaa/common/models/signup_body_model.dart';
@@ -153,6 +156,10 @@ class RouteHelper {
     GetPage(name: sendMoney, page: () => TransactionMoneyScreen(phoneNumber: Get.parameters['phone-number'],fromEdit: Get.parameters['from-edit']== 'edit-number')),
     GetPage(name: sendMoneyBalanceInput, page: () => TransactionBalanceInputScreen(transactionType: Get.parameters['transaction-type'])),
     GetPage(name: sendMoneyConfirmation, page: () => TransactionConfirmationScreen(inputBalance:double.tryParse(Get.parameters['input-balance']!),transactionType: Get.parameters['transaction-type'])),
+
+// loans
+    GetPage(name: '/loanOffers', page: () => LoanOffersScreen()),
+    GetPage(name: '/calculator', page: () => LoanCalculatorScreen()),
 
     GetPage(name: choseLoginOrRegScreen, page: () => const OnBoardingScreen()),
     GetPage(name: createAccountScreen, page: () => const CreateAccountScreen()),

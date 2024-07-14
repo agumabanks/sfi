@@ -96,8 +96,11 @@ const Column(
                                 ElevatedButton(
                                   onPressed: () {
                                     // Add your onPressed code here!
+                                    print('geting to loan offers');
+                                    Get.toNamed("/loanOffers");
                                   },
                                   style: ElevatedButton.styleFrom(
+
                                     foregroundColor: Colors.blue, backgroundColor: Colors.white,
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(20),
