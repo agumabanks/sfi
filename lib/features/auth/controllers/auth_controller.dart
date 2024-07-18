@@ -22,6 +22,9 @@ import 'package:Sanaa/features/auth/domain/reposotories/auth_repo.dart';
 import 'package:Sanaa/helper/route_helper.dart';
 import 'package:Sanaa/util/app_constants.dart';
 import 'package:Sanaa/helper/custom_snackbar_helper.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+import '../../banking/loans/domain/userLoan.dart';
 
 class AuthController extends GetxController implements GetxService {
   final AuthRepo authRepo;
@@ -42,8 +45,165 @@ class AuthController extends GetxController implements GetxService {
     bool get biometric => _biometric;
     bool get isBiometricSupported => _isBiometricSupported;
 
+  UserShortDataModel? userData;
+  String? phoneNumberUser;
+Future<void> getCustomerData() async {
+  try {
+    _isLoading = true;
+    update();
+
+    userData = Get.find<AuthController>().getUserData();
+    phoneNumberUser = userData!.phone!;
+
+    Response response = await authRepo.getCustomerData(phoneNumber: "+256${phoneNumberUser}");
+
+    if (response.statusCode == 200) {
+      if (response.body['user_type'] == 'customer') {
+       
+       
+      } else {
+        // Handle the case for agents or other user types
+         var customerData = response.body['customer'];
+
+        // Save customer data in shared preferences as a JSON string
+        SharedPreferences prefs = await SharedPreferences.getInstance();
+        String customerDataJson = jsonEncode(customerData);
+        await prefs.setString('customerData', customerDataJson);
+
+        // Retrieve and print the customer data to verify it is saved
+        String? savedCustomerDataJson = prefs.getString('customerData');
+        Map<String, dynamic> savedCustomerData = jsonDecode(savedCustomerDataJson!);
+        var userId = savedCustomerData['id'];
+        print('________________________________________________________________'); print('________________________________________________________________'); print('________________________________________________________________');
+        print('Saved customer data: $savedCustomerData');
+                print('________________________________________________________________'); 
+                print('_______________________________${userId}_________________________________');
+                 print('________________________________________________________________');
+
+        print('User is not a customer 2222222222');
+      }
+    } else {
+      // Handle non-200 status codes
+      print('Error: ${response.statusCode}');
+    }
+  } catch (e) {
+    // Handle exceptions
+    print('Exception: $e');
+  } finally {
+    _isLoading = false;
+    update();
+  }
+}
+
+Future<void> printSavedUserId() async {
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  String? savedUserId = prefs.getString('userID');
+  print('Saved user ID: $savedUserId');
+}
 
 
+ List<UserLoan> _userLoans = [];
+ List<UserLoan> get userLoans => _userLoans;
+
+Future<void> getUserLoans2() async {
+  print('Getting user loans');
+
+  try {
+    Response response = await authRepo.userLoansList('24');
+    print('Response status code: ${response.statusCode}');
+    print('Response body: ${response.body}');
+
+    if (response.statusCode == 200) {
+      final responseData = jsonDecode(response.body);
+      print('Decoded response data: $responseData');
+
+      if (responseData is Map<String, dynamic>) {
+        if (responseData['loans'] != null) {
+          final loansData = responseData['loans'];
+          print('Loans data: $loansData');
+
+          if (loansData is List) {
+            _userLoans = loansData
+                .map((loan) => UserLoan.fromJson(loan as Map<String, dynamic>))
+                .toList();
+          } else if (loansData is Map<String, dynamic>) {
+            _userLoans = [UserLoan.fromJson(loansData)];
+          } else {
+            _userLoans = [];
+          }
+          update();
+          print('User Loans: $_userLoans');
+        } else {
+          _userLoans = [];
+          update();
+          throw Exception('No loans found or invalid response structure');
+        }
+      } else {
+        _userLoans = [];
+        update();
+        throw Exception('Invalid response structure');
+      }
+    } else {
+      _userLoans = [];
+      update();
+      throw Exception('Failed to get user loans: ${response.statusCode}');
+    }
+  } catch (error) {
+    _userLoans = [];
+    update();
+    print('Error getting user loans: $error');
+    rethrow;
+  }
+}
+
+
+
+Future<List<UserLoan>> getUserLoans() async {
+   
+    Response response = await authRepo.userLoansList('24');
+        print('Response status code: ${response.statusCode}');
+        print('Response body: ${response.body}');
+       
+        if (response.statusCode == 200) {
+          print('getting boddy ______________________________');
+            return userLoanFromJson(response.body);
+          } else {
+            throw Exception('Failed to load user loans 22');
+          }
+  }
+
+
+
+
+
+  Future<void> getUserLoansll() async {
+     try {
+      // final response = await http.get(Uri.parse(url));
+
+
+       
+
+      // if (response.statusCode == 200) {
+      //   final List<dynamic> responseData = jsonDecode(response.body);
+      //   _userLoans = responseData.map((json) => UserLoan.fromJson(json)).toList();
+        
+      //   if (response.statusCode == 200) {
+      //   final List<dynamic> responseData = jsonDecode(response.body);
+      //   _userLoans = responseData.map((json) => UserLoan.fromJson(json)).toList();
+      //   update();}
+        
+      //   print('__________ User Loans: $userLoans');
+      // } else {
+      //   print('Failed to load loan offers. Status code: ${response.statusCode}');
+      // }
+    } catch (e) {
+      print('Failed to load loan offers. Error: $e');
+    }
+  }
+
+  void updateLoans() {
+    update();
+  }
 
     Future<void> _callSetting() async {
       final LocalAuthentication bioAuth = LocalAuthentication();
@@ -133,6 +293,7 @@ class AuthController extends GetxController implements GetxService {
     _isBiometricSupported = await bioAuth.canCheckBiometrics || await bioAuth.isDeviceSupported();
   }
 
+ 
   Future<Response> checkPhone(String phoneNumber) async{
       _isLoading = true;
       update();

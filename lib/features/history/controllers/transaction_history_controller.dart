@@ -82,6 +82,7 @@ class TransactionHistoryController extends GetxController implements GetxService
         _cashOutList = [];
         _withdrawList = [];
         _paymentList = [];
+        
         response.body['transactions'].forEach((transactionHistory) {
           Transactions history = Transactions.fromJson(transactionHistory);
           if(history.transactionType == AppConstants.sendMoney){

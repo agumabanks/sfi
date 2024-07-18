@@ -21,10 +21,7 @@ class _LoansPageState extends State<LoansPage> {
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
       setState(() {
-        // double monthlyInterestRate = _interestRate / 12 / 100;
-        // int numberOfPayments = _loanTerm * 12;
-        // _monthlyPayment = (_loanAmount * monthlyInterestRate) /
-        //     (1 - ).pow()      
+      
             
         });
     }

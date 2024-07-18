@@ -48,6 +48,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:get/get.dart';
 import 'package:unique_identifier/unique_identifier.dart';
 
+import '../features/banking/loans/controllers/loanController.dart';
 import '../features/kyc_verification/domain/reposotories/kyc_verify_repo.dart';
 
 
@@ -88,6 +89,8 @@ Future<Map<String, Map<String, String>>> init() async {
 
   // Controller
   Get.lazyPut(() => ThemeController(sharedPreferences: Get.find()));
+  Get.lazyPut(() => LoanController());
+
    Get.lazyPut(() => SplashController(splashRepo: Get.find()));
   Get.lazyPut(() => LocalizationController(sharedPreferences: Get.find()));
   Get.lazyPut(() => LanguageController(sharedPreferences: Get.find()));

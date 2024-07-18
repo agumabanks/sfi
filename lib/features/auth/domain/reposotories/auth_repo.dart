@@ -18,6 +18,14 @@ class AuthRepo extends GetxService{
   Future<Response> checkPhoneNumber({String? phoneNumber}) async {
     return apiClient.postData(AppConstants.customerPhoneCheckUri, {"phone": phoneNumber});
   }
+
+  Future<Response> userLoansList( String? id) async {
+    return apiClient.postData(AppConstants.userLoansList, {"id": id});
+  }
+  
+  Future<Response> getCustomerData ({String? phoneNumber}) async {
+    return apiClient.postData(AppConstants.getcustomerDataUri, {"phone": phoneNumber});
+  }
   
   Future<Response> verifyPhoneNumber({String? phoneNumber,String? otp}) async {
     return apiClient.postData(AppConstants.customerPhoneVerifyUri, {"phone": phoneNumber, "otp": otp});

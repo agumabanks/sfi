@@ -5,15 +5,18 @@ import 'images.dart';
 
 class AppConstants {
   static const String appName = 'Sanaa';
-  static const String baseUrl = 'https://finmicro.sanaa.co';
+  static const String baseUrl = 'https://finmicro.sanaa.co'; 
   static const bool demo = false;
   static const double appVersion = 4.2;
-  static const String customerPhoneCheckUri = '/api/v1/customer/auth/check-phone';
+  static const String customerPhoneCheckUri = '/api/v1/customer/auth/check-phone'; ///api/v1/getUserByPhone
+  static const String getcustomerDataUri = '/api/v1/getUserByPhone';
   static const String customerPhoneVerifyUri = '/api/v1/customer/auth/verify-phone';
   static const String customerRegistrationUri = '/api/v1/customer/auth/register';
   static const String customerUpdateProfile = '/api/v1/customer/update-profile';
   static const String customerLoginUri = '/api/v1/customer/auth/login';
   static const String customerLogoutUri = '/api/v1/customer/logout';
+  static const String userLoansList = '/api/v1/loan-lists'; ///api/v1/loan-lists/24
+
   static const String customerForgetPassOtpUri = '/api/v1/customer/auth/forgot-password';
   static const String customerForgetPassVerification = '/api/v1/customer/auth/verify-token';
   static const String customerForgetPassReset = '/api/v1/customer/auth/reset-password';

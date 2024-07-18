@@ -27,6 +27,7 @@ import 'package:Sanaa/features/requested_money/screens/requested_money_list_scre
 import 'package:Sanaa/features/setting/screens/transaction_limit_screen.dart';
 
 import '../../banking/investmentScreen.dart';
+import '../../banking/loans/controllers/loanController.dart';
 import '../../banking/savings/savingsScreen.dart';
 
 
@@ -192,8 +193,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     child: MenuItem2(image:"assets/image/savings.png",title: 'Loans'.tr),
                     onTap: ()
                     {
-
+                      // Get.find<AuthController>().getUserLoans();
                       Get.to(()=> LoansPage());
+                      
+                      // LoanController
+
                       // showCustomSnackBarHelper(message: 'Coming Soon', isError: true);
                       // showCustomSnackBarHelper('Coming Soon',isError: false, duration: const Duration(minutes: 10));
                     }

@@ -1,3 +1,4 @@
+import 'package:Sanaa/features/banking/loans/widget/userLoans.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -95,9 +96,10 @@ const Column(
                                 ),
                                 ElevatedButton(
                                   onPressed: () {
-                                    // Add your onPressed code here!
+                                    // Add your onPressed code here! 
                                     print('geting to loan offers');
-                                    Get.toNamed("/loanOffers");
+                                    // Get.toNamed("/loanOffers");
+                                    Get.to(UserLoansScreen() );
                                   },
                                   style: ElevatedButton.styleFrom(
 
